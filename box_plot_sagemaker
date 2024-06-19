@@ -1,0 +1,17 @@
+# Table is available as variable `df`
+import altair as alt
+
+
+# Takes top 1000 records
+df = df.head(1000)  
+
+chart = (
+    alt.Chart(df)
+    .mark_boxplot()
+    .encode(
+        # Specify the column names for X and Y axis.
+        x="medu",
+        y="g3",
+    )
+    .interactive()
+)
