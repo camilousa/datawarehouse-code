@@ -17,7 +17,7 @@ def lambda_handler(event, context):
     
     s = f'date_id,rental_date,day_of_week,is_weekend,is_holiday\n'
     for d in rrule(DAILY, dtstart=start_date, until=end_date):
-        date_id = d.strftime("%YX%m%d").replace('X0','')
+        date_id = d.strftime("%YX%m%d")
         rental_date = d.strftime("%Y-%m-%d")
         day_of_week = days[d.weekday()]
         is_weekend = int(d.weekday() >= 5)
